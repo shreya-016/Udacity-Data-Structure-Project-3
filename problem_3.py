@@ -72,4 +72,7 @@ def test_function(test_case):
 
 test_case1 = [[1, 2, 3, 4, 5], [542, 31]]
 test_case2 = [[4, 6, 2, 5, 9, 8], [964, 852]]
+test_case3 = [[], []]
+test_function(test_case)
 test_function(test_case1)
+test_function(test_case2)
