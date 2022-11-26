@@ -27,14 +27,6 @@ Subsequently we are incrementing the first pointer and mid and decrementing the 
 In this case the _time complexity_ is __O(n)__. The _space complexity_ is  __O(1)__ as we are not using any extra space.
 
 ## Problem 5
-This problem focuses on __finding max and min values__ from an unsorted array, we are using two placeholders minVal and maxVal that is used to find global minimum 
-and maximum by traversing the complete array and swapping if required with the localMax and localMin. 
-
-### Time and Space complexity
-In this case, we perform a __single transverse__ of the whole input, being the time complexity of __O(n)__. In respect 
-to the _space complexity_, we have just a pair of pointers, hence, it is independent from _input size_; __O(1)__.
-
-## Problem 6
 We use a __trie__ a data structure to solve the complex problem of autocompletion.
 
 ### Time and Space complexity
@@ -43,6 +35,20 @@ that’s being searched for, inserted, and the number of total words, **n**, mak
  __O(a*n__). Looking into the space complexity of a __trie__, the worst case, would be when we have a word (or words),
  with no common characters between them, hence having, a node for each letter. Resulting in a _space complexity_ of 
  __O(n)__.
+
+### Time and Space complexity
+In this case, we perform a __single transverse__ of the whole input, being the time complexity of __O(n)__. In respect 
+to the _space complexity_, we have just a pair of pointers, hence, it is independent from _input size_; __O(1)__.
+
+## Problem 6
+
+This problem focuses on __finding max and min values__ from an unsorted array, we are using two placeholders minVal and maxVal that is used to find global minimum 
+and maximum by traversing the complete array and swapping if required with the localMax and localMin. 
+
+### Time and Space complexity
+In this case, we perform a __single transverse__ of the whole input, being the time complexity of __O(n)__. In respect 
+to the _space complexity_, we have just a pair of pointers, hence, it is independent from _input size_; __O(1)__.
+
 
 ## Problem 7 
 It is similar to __problem 5__, except for the _edge cases_, like "root handler", and working with a __hierarchy of 
