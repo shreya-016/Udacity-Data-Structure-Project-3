@@ -57,5 +57,6 @@ derived from a _tree_, suited for a good ratio between _time and space_ complexi
 
 ### Time and Space complexity
 In __trie__, time complexity of **searching and inserting** is the length of the path **n**
-that’s being searched for, inserted that is __O(n)__, _space complexity_ for __trie__ in the worst case would be when we have a paths with no common folders between them that is  
-__O(n)__.
+that’s being searched for, inserted that is __O(n)__, _space complexity_ for __trie__ in the worst case would be when we have a paths with no common folders between them that is __O(n)__. 
+
+The function calls the split_path(url_path) method to split the path around the '/' character and returning a list of path_parts. The time complexity of this function is O(n). The insert method has O(n) time complexity, resulting in an overall time complexity of O(n). Similarly, the Space Complexity depends on the number of nodes in the Trie and, hence, it scales proportionally to the number of parts in the url_path.
