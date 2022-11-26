@@ -1,21 +1,76 @@
-# Unsorted Integer Array
-class Solution():
-    def get_min_max(self, arr):
-        minVal = arr[0]
-        maxVal = arr[0]
-        for i in range(1, len(arr)):
-            if maxVal < arr[i]:
-                maxVal = arr[i]
-            if minVal > arr[i]:
-                minVal = arr[i]
-            
-        return minVal, maxVal
+from ipywidgets import widgets
+from IPython.display import display
+from ipywidgets import interact
+
+class TrieNode:
+    def __init__(self):
+        ## Initialize this node in the Trie
+        self.children = {}
+        self.isWord = False
+
+    def insert(self, char):
+        ## Add a child node in this Trie
+        self.children[char] = TrieNode()
+        
+    def suffixes(self, suffix = ''):
+        listOfWords = []
+        self.suffixesRecursive(suffix, listOfWords)
+        return listOfWords
     
-Solution().get_min_max([5, 8, 34, 9, 12, 59, 3, 49, 12, 44, 7, 33])
-## Example Test Case of Ten Integers
-import random
+    def suffixesRecursive(self, suffix, listOfWords):
+        for char in self.children:
+            suffix += char
+            if self.children[char].isWord:
+                #listOfWords.append(suffix+char)
+                listOfWords.append(suffix)
+                if len(self.children[char].children) > 0:
+                    self.children[char].suffixesRecursive(suffix, listOfWords)
+                    #self.children[char].suffixesRecursive(suffix+char, listOfWords)
+            else:
+                #self.children[char].suffixesRecursive(suffix+char, listOfWords)
+                self.children[char].suffixesRecursive(suffix, listOfWords)
+                
+class Trie:
+    def __init__(self):
+        self.root = TrieNode()
+       
+    def insert(self, word):
+        curr = self.root
+        for char in word:
+            if char in curr.children:
+                curr = curr.children[char]
+                continue
+            else:
+                curr.children[char] = TrieNode()
+                curr = curr.children[char]
+        curr.isWord = True
+        
+    def find(self, prefix):
+        curr = self.root
+        for char in prefix:
+            if char not in curr.children:
+                return False
+            else:
+                curr = curr.children[char]
+        return curr
+    
+MyTrie = Trie()
+listOfWords = [
+    "ant", "anthology", "antagonist", "antonym", 
+    "fun", "function", "factory", 
+    "trie", "trigger", "trigonometry", "tripod"
+]
+for word in listOfWords:
+    MyTrie.insert(word)
+    
 
-l = [i for i in range(0, 10)]  # a list containing 0 - 9
-random.shuffle(l)
-
-print ("Pass" if ((0, 9) == Solution().get_min_max(l)) else "Fail")
+def f(prefix):
+    if prefix != '':
+        prefixNode = MyTrie.find(prefix)
+        if prefixNode:
+            print('\n'.join(prefixNode.suffixes()))
+        else:
+            print(prefix + " not found")
+    else:
+        print('')
+interact(f,prefix='tri');
