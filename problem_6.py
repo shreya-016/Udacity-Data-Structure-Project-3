@@ -1,4 +1,3 @@
-# Unsorted Integer Array
 class Solution():
     def get_min_max(self, arr):
         minVal = arr[0]
@@ -12,6 +11,8 @@ class Solution():
         return minVal, maxVal
     
 Solution().get_min_max([5, 8, 34, 9, 12, 59, 3, 49, 12, 44, 7, 33])
+Solution().get_min_max([0, 0])
+
 ## Example Test Case of Ten Integers
 import random
 
@@ -19,3 +20,5 @@ l = [i for i in range(0, 10)]  # a list containing 0 - 9
 random.shuffle(l)
 
 print ("Pass" if ((0, 9) == Solution().get_min_max(l)) else "Fail")
+print ("Pass" if ((0, 0) == Solution().get_min_max([0])) else "Fail")
+print ("Pass" if ((0, 9) == Solution().get_min_max([1])) else "Fail")  # Fail
