@@ -43,6 +43,7 @@ Individual complexities:
 4. Class TrieNode __suffixes__ method: [Time complexity O(n) n is total number of words in worst case, Space complexity will be O(n) which is recursive stack space]
 5. Class TrieNode __insert__ method: [Time complexity will be O(1). Space complexity will be O(1)]
 6. Class TrieNode __init__ method: [Here also time complexity and space complexity both will be O(1)]
+7. Class TrieNode __suffixRecursive__ method: [Time complexity will be O(2^n). Space complexity of recursive algorithm is proportinal to maximum depth of recursion tree generated. If each function call of recursive algorithm takes O(m) space and if the maximum depth of recursion tree is 'n' then space complexity of recursive algorithm would be O(nm).]
 
 
 ## Problem 6
