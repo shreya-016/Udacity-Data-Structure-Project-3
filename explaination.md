@@ -76,3 +76,4 @@ Individual complexities:
 6. Class RouterTrieNode __insert__ method: [The time and space complexity will be O(1)]
 7. Class RouterTrie __insert__ method: [Time complexity O(n), where n is the number path pieces in the url. For example: “/a/b/c/d” has n = 4, and Space complexity will also be O(n) as we need to insert the elements as well]
 8. Class RouterTrie __init__ method: [The time and space complexity will be O(1).]
+9. Class RouteTrie __find__ method: [Time complexity for this method will be O(n) and space complexity will be O(1).]
