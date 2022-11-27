@@ -36,9 +36,10 @@ that’s being searched for, inserted, and the number of total words, **n**, mak
  with no common characters between them, hence having, a node for each letter. Resulting in a _space complexity_ of 
  __O(n)__.
 
-### Time and Space complexity
-In this case, we perform a __single transverse__ of the whole input, being the time complexity of __O(n)__. In respect 
-to the _space complexity_, we have just a pair of pointers, hence, it is independent from _input size_; __O(1)__.
+Individual complexities:
+1. Class Trie __insert__ method: [Time complexity O(w) w is the length of the word, Space complexity O(w) as the word is inserted in trie]
+2. Class Trie __find__ method: [Time complexity O(p) p is the length of the prefix, Space complexity O(1)]
+3. Class TrieNode __suffixes__ method: [Time complexity O(n) n is total number of words in worst case, Space complexity will be O(n) which is recursive stack space]
 
 ## Problem 6
 
@@ -60,3 +61,8 @@ In __trie__, time complexity of **searching and inserting** is the length of the
 that’s being searched for, inserted that is __O(n)__, _space complexity_ for __trie__ in the worst case would be when we have a paths with no common folders between them that is __O(n)__. 
 
 The function calls the split_path(url_path) method to split the path around the '/' character and returning a list of path_parts. The time complexity of this function is O(n). The insert method has O(n) time complexity, resulting in an overall time complexity of O(n). Similarly, the Space Complexity depends on the number of nodes in the Trie and, hence, it scales proportionally to the number of parts in the url_path.
+
+Individual complexities:
+1. Class Router __add_Handler__ method: [Time complexity O(n), where n is number of path peices in url, Space complexity will be O(n) as it calls insert method.]
+2. Class TrieNode __lookup__ method: [Time complexity O(n), as it directly calls find method of RouterTrie which is of complexity O(n) as it looksup the path, Space complexity will be O(1)]
+4. Class RouterTrie __insert__ method: [Time complexity O(n), where n is the number path pieces in the url. For example: “/a/b/c/d” has n = 4, and Space complexity will also be O(n) as we need to insert the elements as well]
